@@ -11,8 +11,8 @@
 		B07E3DB421041CC6006957B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB321041CC6006957B8 /* ViewController.swift */; };
 		B07E3DB721041CC6006957B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DB521041CC6006957B8 /* Main.storyboard */; };
 		B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB821041CC6006957B8 /* HappyBirds.xcdatamodeld */; };
-		B07E3DBC21041CC9006957B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DBB21041CC9006957B8 /* Assets.xcassets */; };
 		B07E3DBF21041CC9006957B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DBD21041CC9006957B8 /* LaunchScreen.storyboard */; };
+		B07E3DC721041D13006957B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DC621041D13006957B8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +21,9 @@
 		B07E3DB321041CC6006957B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B07E3DB621041CC6006957B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B07E3DB921041CC6006957B8 /* HappyBirds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappyBirds.xcdatamodel; sourceTree = "<group>"; };
-		B07E3DBB21041CC9006957B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07E3DBE21041CC9006957B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B07E3DC021041CC9006957B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B07E3DC621041D13006957B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../HappyBird/HappyBird/Resourses/Extension/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 				B07E3DB121041CC6006957B8 /* AppDelegate.swift */,
 				B07E3DB321041CC6006957B8 /* ViewController.swift */,
 				B07E3DB521041CC6006957B8 /* Main.storyboard */,
-				B07E3DBB21041CC9006957B8 /* Assets.xcassets */,
+				B07E3DC621041D13006957B8 /* Assets.xcassets */,
 				B07E3DBD21041CC9006957B8 /* LaunchScreen.storyboard */,
 				B07E3DC021041CC9006957B8 /* Info.plist */,
 				B07E3DB821041CC6006957B8 /* HappyBirds.xcdatamodeld */,
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B07E3DBF21041CC9006957B8 /* LaunchScreen.storyboard in Resources */,
-				B07E3DBC21041CC9006957B8 /* Assets.xcassets in Resources */,
+				B07E3DC721041D13006957B8 /* Assets.xcassets in Resources */,
 				B07E3DB721041CC6006957B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
