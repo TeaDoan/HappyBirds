@@ -8,22 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		B07E3DB221041CC6006957B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB121041CC6006957B8 /* AppDelegate.swift */; };
-		B07E3DB421041CC6006957B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB321041CC6006957B8 /* ViewController.swift */; };
 		B07E3DB721041CC6006957B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DB521041CC6006957B8 /* Main.storyboard */; };
 		B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB821041CC6006957B8 /* HappyBirds.xcdatamodeld */; };
 		B07E3DBF21041CC9006957B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DBD21041CC9006957B8 /* LaunchScreen.storyboard */; };
-		B07E3DC721041D13006957B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DC621041D13006957B8 /* Assets.xcassets */; };
+		B07E3DC9210425F0006957B8 /* RandomJokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DC8210425F0006957B8 /* RandomJokes.swift */; };
+		B07E3DCE2104262B006957B8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DCD2104262B006957B8 /* UIColor+Extension.swift */; };
+		B0DEEF84210428D3002F55FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DEEF83210428D3002F55FC /* HomeViewController.swift */; };
+		B0DEEF8621042987002F55FC /* RandomJokesControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DEEF8521042987002F55FC /* RandomJokesControler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B07E3DAE21041CC6006957B8 /* HappyBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07E3DB121041CC6006957B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B07E3DB321041CC6006957B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B07E3DB621041CC6006957B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B07E3DB921041CC6006957B8 /* HappyBirds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappyBirds.xcdatamodel; sourceTree = "<group>"; };
 		B07E3DBE21041CC9006957B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B07E3DC021041CC9006957B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B07E3DC621041D13006957B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../HappyBird/HappyBird/Resourses/Extension/Assets.xcassets; sourceTree = "<group>"; };
+		B07E3DC8210425F0006957B8 /* RandomJokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokes.swift; sourceTree = "<group>"; };
+		B07E3DCD2104262B006957B8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B07E3DD02104266A006957B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0DEEF83210428D3002F55FC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B0DEEF8521042987002F55FC /* RandomJokesControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesControler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +62,65 @@
 			isa = PBXGroup;
 			children = (
 				B07E3DB121041CC6006957B8 /* AppDelegate.swift */,
-				B07E3DB321041CC6006957B8 /* ViewController.swift */,
-				B07E3DB521041CC6006957B8 /* Main.storyboard */,
-				B07E3DC621041D13006957B8 /* Assets.xcassets */,
-				B07E3DBD21041CC9006957B8 /* LaunchScreen.storyboard */,
-				B07E3DC021041CC9006957B8 /* Info.plist */,
-				B07E3DB821041CC6006957B8 /* HappyBirds.xcdatamodeld */,
+				B0DEEF80210427C3002F55FC /* CoreDataModels */,
+				B0DEEF82210428A3002F55FC /* Models */,
+				B0DEEF7F210427B5002F55FC /* UI */,
+				B0DEEF812104286A002F55FC /* ViewControllers */,
+				B07E3DCF21042654006957B8 /* Resources */,
 			);
 			path = HappyBirds;
+			sourceTree = "<group>";
+		};
+		B07E3DCA210425F8006957B8 /* HomePageModels */ = {
+			isa = PBXGroup;
+			children = (
+				B07E3DC8210425F0006957B8 /* RandomJokes.swift */,
+				B0DEEF8521042987002F55FC /* RandomJokesControler.swift */,
+			);
+			path = HomePageModels;
+			sourceTree = "<group>";
+		};
+		B07E3DCF21042654006957B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B07E3DCD2104262B006957B8 /* UIColor+Extension.swift */,
+				B07E3DD02104266A006957B8 /* Assets.xcassets */,
+				B07E3DC021041CC9006957B8 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B0DEEF7F210427B5002F55FC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B07E3DB521041CC6006957B8 /* Main.storyboard */,
+				B07E3DBD21041CC9006957B8 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B0DEEF80210427C3002F55FC /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				B07E3DB821041CC6006957B8 /* HappyBirds.xcdatamodeld */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		B0DEEF812104286A002F55FC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0DEEF83210428D3002F55FC /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B0DEEF82210428A3002F55FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B07E3DCA210425F8006957B8 /* HomePageModels */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +182,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B07E3DBF21041CC9006957B8 /* LaunchScreen.storyboard in Resources */,
-				B07E3DC721041D13006957B8 /* Assets.xcassets in Resources */,
 				B07E3DB721041CC6006957B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B07E3DB421041CC6006957B8 /* ViewController.swift in Sources */,
+				B0DEEF84210428D3002F55FC /* HomeViewController.swift in Sources */,
 				B07E3DB221041CC6006957B8 /* AppDelegate.swift in Sources */,
+				B0DEEF8621042987002F55FC /* RandomJokesControler.swift in Sources */,
 				B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */,
+				B07E3DC9210425F0006957B8 /* RandomJokes.swift in Sources */,
+				B07E3DCE2104262B006957B8 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,10 +341,9 @@
 		B07E3DC421041CC9006957B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7CCUH8W47;
-				INFOPLIST_FILE = HappyBirds/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HappyBirds/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,10 +358,9 @@
 		B07E3DC521041CC9006957B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7CCUH8W47;
-				INFOPLIST_FILE = HappyBirds/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HappyBirds/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
