@@ -20,6 +20,8 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
        updateViews()
        tableView.delegate = self
        tableView.dataSource = self
+    let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
+    navigationController?.navigationBar.titleTextAttributes = textAttributes
        
     }
     
@@ -45,14 +47,15 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.backgroundColor = .clear
         cell.backgroundColor = .clear
         self.tableView.separatorStyle = .none
-        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 180))
+//        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 180))
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 20, y: 18, width: self.view.frame.size.width - 40, height: 170))
         whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
         whiteRoundedView.layer.masksToBounds = false
-        whiteRoundedView.layer.cornerRadius = 18.0
+        whiteRoundedView.layer.cornerRadius = 8.0
         whiteRoundedView.layer.masksToBounds = true
         whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
         whiteRoundedView.layer.shadowOpacity = 0.2
-        whiteRoundedView.applyGradient(colours:[UIColor.rgb(167, 233, 211),UIColor.rgb(159, 211, 226)] )
+        whiteRoundedView.applyGradient(colours:[UIColor.rgb(71, 207, 171),UIColor.rgb(56, 207, 150)] )
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
         cell.jokeLabel.text = joke.joke
