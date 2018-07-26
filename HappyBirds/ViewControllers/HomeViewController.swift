@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HomePageInfoKit
 
 class HomeViewController: UIViewController {
     

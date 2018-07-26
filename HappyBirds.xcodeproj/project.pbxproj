@@ -7,17 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B05E6EB121057AD4008C82DD /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E6EB021057AD4008C82DD /* JokesViewController.swift */; };
+		B05E6EB321057AF8008C82DD /* JokesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E6EB221057AF8008C82DD /* JokesTableViewCell.swift */; };
+		B05E6EB521057CFC008C82DD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E6EB421057CFC008C82DD /* CoreDataStack.swift */; };
+		B05E6EB821058052008C82DD /* JokesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E6EB721058052008C82DD /* JokesAPIService.swift */; };
+		B0707AE92109166300AAE476 /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0707AE82109166300AAE476 /* Jokes.swift */; };
+		B0707AEB2109794700AAE476 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0707AEA2109794700AAE476 /* Quotes.swift */; };
 		B07E3DB221041CC6006957B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB121041CC6006957B8 /* AppDelegate.swift */; };
 		B07E3DB721041CC6006957B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DB521041CC6006957B8 /* Main.storyboard */; };
 		B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB821041CC6006957B8 /* HappyBirds.xcdatamodeld */; };
 		B07E3DBF21041CC9006957B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DBD21041CC9006957B8 /* LaunchScreen.storyboard */; };
-		B07E3DC9210425F0006957B8 /* RandomJokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DC8210425F0006957B8 /* RandomJokes.swift */; };
 		B07E3DCE2104262B006957B8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DCD2104262B006957B8 /* UIColor+Extension.swift */; };
+		B09265672104FB2000656648 /* RandomJokesControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DEEF8521042987002F55FC /* RandomJokesControler.swift */; };
+		B09265682104FB2300656648 /* RandomJokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DC8210425F0006957B8 /* RandomJokes.swift */; };
+		B0926570210501E200656648 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B092656F210501E200656648 /* NotificationCenter.framework */; };
+		B0926573210501E200656648 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0926572210501E200656648 /* TodayViewController.swift */; };
+		B0926576210501E200656648 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0926574210501E200656648 /* MainInterface.storyboard */; };
+		B092657A210501E200656648 /* HomePage Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B092656D210501E200656648 /* HomePage Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B092657F2105021400656648 /* HomePageInfoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DEEF9E2104F81A002F55FC /* HomePageInfoKit.framework */; };
 		B0DEEF84210428D3002F55FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DEEF83210428D3002F55FC /* HomeViewController.swift */; };
-		B0DEEF8621042987002F55FC /* RandomJokesControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DEEF8521042987002F55FC /* RandomJokesControler.swift */; };
+		B0DEEFA22104F81A002F55FC /* HomePageInfoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B0DEEFA02104F81A002F55FC /* HomePageInfoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0DEEFA52104F81A002F55FC /* HomePageInfoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DEEF9E2104F81A002F55FC /* HomePageInfoKit.framework */; };
+		B0DEEFA62104F81A002F55FC /* HomePageInfoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0DEEF9E2104F81A002F55FC /* HomePageInfoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0F9EDF52105193600CA0C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DD02104266A006957B8 /* Assets.xcassets */; };
+		B0F9EDFD2105213F00CA0C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DD02104266A006957B8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B0926578210501E200656648 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B07E3DA621041CC5006957B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B092656C210501E200656648;
+			remoteInfo = "HomePage Widget";
+		};
+		B0DEEFA32104F81A002F55FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B07E3DA621041CC5006957B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0DEEF9D2104F81A002F55FC;
+			remoteInfo = HomePageInfoKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B092657E210501E200656648 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B092657A210501E200656648 /* HomePage Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0DEEF982104F7C8002F55FC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B0DEEFA62104F81A002F55FC /* HomePageInfoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B05E6EB021057AD4008C82DD /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
+		B05E6EB221057AF8008C82DD /* JokesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesTableViewCell.swift; sourceTree = "<group>"; };
+		B05E6EB421057CFC008C82DD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B05E6EB721058052008C82DD /* JokesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesAPIService.swift; sourceTree = "<group>"; };
+		B0707AE82109166300AAE476 /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jokes.swift; sourceTree = "<group>"; };
+		B0707AEA2109794700AAE476 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		B07E3DAE21041CC6006957B8 /* HappyBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07E3DB121041CC6006957B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B07E3DB621041CC6006957B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -27,12 +91,39 @@
 		B07E3DC8210425F0006957B8 /* RandomJokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokes.swift; sourceTree = "<group>"; };
 		B07E3DCD2104262B006957B8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B07E3DD02104266A006957B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B092656D210501E200656648 /* HomePage Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HomePage Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B092656F210501E200656648 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		B0926572210501E200656648 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		B0926575210501E200656648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		B0926577210501E200656648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0DEEF83210428D3002F55FC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B0DEEF8521042987002F55FC /* RandomJokesControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesControler.swift; sourceTree = "<group>"; };
+		B0DEEF8E2104F7C8002F55FC /* HomePageInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageInfo.h; sourceTree = "<group>"; };
+		B0DEEF8F2104F7C8002F55FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0DEEF9E2104F81A002F55FC /* HomePageInfoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HomePageInfoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0DEEFA02104F81A002F55FC /* HomePageInfoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageInfoKit.h; sourceTree = "<group>"; };
+		B0DEEFA12104F81A002F55FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B07E3DAB21041CC6006957B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0DEEFA52104F81A002F55FC /* HomePageInfoKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B092656A210501E200656648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B092657F2105021400656648 /* HomePageInfoKit.framework in Frameworks */,
+				B0926570210501E200656648 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0DEEF9A2104F81A002F55FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,10 +133,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B05E6EB621058001008C82DD /* ModelControler+APIService */ = {
+			isa = PBXGroup;
+			children = (
+				B0F137842107B82F00A24799 /* Joke API Service  */,
+			);
+			path = "ModelControler+APIService";
+			sourceTree = "<group>";
+		};
 		B07E3DA521041CC5006957B8 = {
 			isa = PBXGroup;
 			children = (
 				B07E3DB021041CC6006957B8 /* HappyBirds */,
+				B0DEEF8D2104F7C8002F55FC /* HomePageInfo */,
+				B0DEEF9F2104F81A002F55FC /* HomePageInfoKit */,
+				B0926571210501E200656648 /* HomePage Widget */,
+				B092656E210501E200656648 /* Frameworks */,
 				B07E3DAF21041CC6006957B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				B07E3DAE21041CC6006957B8 /* HappyBirds.app */,
+				B0DEEF9E2104F81A002F55FC /* HomePageInfoKit.framework */,
+				B092656D210501E200656648 /* HomePage Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,8 +167,10 @@
 			isa = PBXGroup;
 			children = (
 				B07E3DB121041CC6006957B8 /* AppDelegate.swift */,
+				B05E6EB421057CFC008C82DD /* CoreDataStack.swift */,
 				B0DEEF80210427C3002F55FC /* CoreDataModels */,
 				B0DEEF82210428A3002F55FC /* Models */,
+				B05E6EB621058001008C82DD /* ModelControler+APIService */,
 				B0DEEF7F210427B5002F55FC /* UI */,
 				B0DEEF812104286A002F55FC /* ViewControllers */,
 				B07E3DCF21042654006957B8 /* Resources */,
@@ -74,8 +181,8 @@
 		B07E3DCA210425F8006957B8 /* HomePageModels */ = {
 			isa = PBXGroup;
 			children = (
-				B07E3DC8210425F0006957B8 /* RandomJokes.swift */,
 				B0DEEF8521042987002F55FC /* RandomJokesControler.swift */,
+				B07E3DC8210425F0006957B8 /* RandomJokes.swift */,
 			);
 			path = HomePageModels;
 			sourceTree = "<group>";
@@ -90,9 +197,28 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B092656E210501E200656648 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B092656F210501E200656648 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0926571210501E200656648 /* HomePage Widget */ = {
+			isa = PBXGroup;
+			children = (
+				B0926572210501E200656648 /* TodayViewController.swift */,
+				B0926574210501E200656648 /* MainInterface.storyboard */,
+				B0926577210501E200656648 /* Info.plist */,
+			);
+			path = "HomePage Widget";
+			sourceTree = "<group>";
+		};
 		B0DEEF7F210427B5002F55FC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B05E6EB221057AF8008C82DD /* JokesTableViewCell.swift */,
 				B07E3DB521041CC6006957B8 /* Main.storyboard */,
 				B07E3DBD21041CC9006957B8 /* LaunchScreen.storyboard */,
 			);
@@ -110,6 +236,7 @@
 		B0DEEF812104286A002F55FC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B05E6EB021057AD4008C82DD /* JokesViewController.swift */,
 				B0DEEF83210428D3002F55FC /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -118,12 +245,51 @@
 		B0DEEF82210428A3002F55FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B07E3DCA210425F8006957B8 /* HomePageModels */,
+				B0707AE82109166300AAE476 /* Jokes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B0DEEF8D2104F7C8002F55FC /* HomePageInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B0DEEF8E2104F7C8002F55FC /* HomePageInfo.h */,
+				B0DEEF8F2104F7C8002F55FC /* Info.plist */,
+			);
+			path = HomePageInfo;
+			sourceTree = "<group>";
+		};
+		B0DEEF9F2104F81A002F55FC /* HomePageInfoKit */ = {
+			isa = PBXGroup;
+			children = (
+				B07E3DCA210425F8006957B8 /* HomePageModels */,
+				B0DEEFA02104F81A002F55FC /* HomePageInfoKit.h */,
+				B0DEEFA12104F81A002F55FC /* Info.plist */,
+			);
+			path = HomePageInfoKit;
+			sourceTree = "<group>";
+		};
+		B0F137842107B82F00A24799 /* Joke API Service  */ = {
+			isa = PBXGroup;
+			children = (
+				B05E6EB721058052008C82DD /* JokesAPIService.swift */,
+				B0707AEA2109794700AAE476 /* Quotes.swift */,
+			);
+			path = "Joke API Service ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B0DEEF9B2104F81A002F55FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0DEEFA22104F81A002F55FC /* HomePageInfoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B07E3DAD21041CC6006957B8 /* HappyBirds */ = {
@@ -133,15 +299,54 @@
 				B07E3DAA21041CC6006957B8 /* Sources */,
 				B07E3DAB21041CC6006957B8 /* Frameworks */,
 				B07E3DAC21041CC6006957B8 /* Resources */,
+				B0DEEF982104F7C8002F55FC /* Embed Frameworks */,
+				B092657E210501E200656648 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B0DEEFA42104F81A002F55FC /* PBXTargetDependency */,
+				B0926579210501E200656648 /* PBXTargetDependency */,
 			);
 			name = HappyBirds;
 			productName = HappyBirds;
 			productReference = B07E3DAE21041CC6006957B8 /* HappyBirds.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B092656C210501E200656648 /* HomePage Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B092657B210501E200656648 /* Build configuration list for PBXNativeTarget "HomePage Widget" */;
+			buildPhases = (
+				B0926569210501E200656648 /* Sources */,
+				B092656A210501E200656648 /* Frameworks */,
+				B092656B210501E200656648 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HomePage Widget";
+			productName = "HomePage Widget";
+			productReference = B092656D210501E200656648 /* HomePage Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B0DEEF9D2104F81A002F55FC /* HomePageInfoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0DEEFA72104F81A002F55FC /* Build configuration list for PBXNativeTarget "HomePageInfoKit" */;
+			buildPhases = (
+				B0DEEF992104F81A002F55FC /* Sources */,
+				B0DEEF9A2104F81A002F55FC /* Frameworks */,
+				B0DEEF9B2104F81A002F55FC /* Headers */,
+				B0DEEF9C2104F81A002F55FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomePageInfoKit;
+			productName = HomePageInfoKit;
+			productReference = B0DEEF9E2104F81A002F55FC /* HomePageInfoKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -154,6 +359,12 @@
 				ORGANIZATIONNAME = "Thao Doan";
 				TargetAttributes = {
 					B07E3DAD21041CC6006957B8 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					B092656C210501E200656648 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					B0DEEF9D2104F81A002F55FC = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -172,6 +383,8 @@
 			projectRoot = "";
 			targets = (
 				B07E3DAD21041CC6006957B8 /* HappyBirds */,
+				B0DEEF9D2104F81A002F55FC /* HomePageInfoKit */,
+				B092656C210501E200656648 /* HomePage Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -182,7 +395,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				B07E3DBF21041CC9006957B8 /* LaunchScreen.storyboard in Resources */,
+				B0F9EDF52105193600CA0C2D /* Assets.xcassets in Resources */,
 				B07E3DB721041CC6006957B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B092656B210501E200656648 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F9EDFD2105213F00CA0C2D /* Assets.xcassets in Resources */,
+				B0926576210501E200656648 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0DEEF9C2104F81A002F55FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,16 +423,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05E6EB521057CFC008C82DD /* CoreDataStack.swift in Sources */,
 				B0DEEF84210428D3002F55FC /* HomeViewController.swift in Sources */,
+				B0707AEB2109794700AAE476 /* Quotes.swift in Sources */,
 				B07E3DB221041CC6006957B8 /* AppDelegate.swift in Sources */,
-				B0DEEF8621042987002F55FC /* RandomJokesControler.swift in Sources */,
+				B05E6EB321057AF8008C82DD /* JokesTableViewCell.swift in Sources */,
+				B05E6EB121057AD4008C82DD /* JokesViewController.swift in Sources */,
 				B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */,
-				B07E3DC9210425F0006957B8 /* RandomJokes.swift in Sources */,
+				B05E6EB821058052008C82DD /* JokesAPIService.swift in Sources */,
+				B0707AE92109166300AAE476 /* Jokes.swift in Sources */,
 				B07E3DCE2104262B006957B8 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0926569210501E200656648 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0926573210501E200656648 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0DEEF992104F81A002F55FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B09265672104FB2000656648 /* RandomJokesControler.swift in Sources */,
+				B09265682104FB2300656648 /* RandomJokes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0926579210501E200656648 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B092656C210501E200656648 /* HomePage Widget */;
+			targetProxy = B0926578210501E200656648 /* PBXContainerItemProxy */;
+		};
+		B0DEEFA42104F81A002F55FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0DEEF9D2104F81A002F55FC /* HomePageInfoKit */;
+			targetProxy = B0DEEFA32104F81A002F55FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B07E3DB521041CC6006957B8 /* Main.storyboard */ = {
@@ -219,6 +483,14 @@
 				B07E3DBE21041CC9006957B8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0926574210501E200656648 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0926575210501E200656648 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,6 +613,8 @@
 		B07E3DC421041CC9006957B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7CCUH8W47;
 				INFOPLIST_FILE = "$(SRCROOT)/HappyBirds/Resources/Info.plist";
@@ -358,6 +632,8 @@
 		B07E3DC521041CC9006957B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7CCUH8W47;
 				INFOPLIST_FILE = "$(SRCROOT)/HappyBirds/Resources/Info.plist";
@@ -369,6 +645,106 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B092657C210501E200656648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7CCUH8W47;
+				INFOPLIST_FILE = "HomePage Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teadoan.HappyBirds.HomePage-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B092657D210501E200656648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7CCUH8W47;
+				INFOPLIST_FILE = "HomePage Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teadoan.HappyBirds.HomePage-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B0DEEFA82104F81A002F55FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = S7CCUH8W47;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HomePageInfoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.teadoan.HomePageInfoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0DEEFA92104F81A002F55FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = S7CCUH8W47;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HomePageInfoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.teadoan.HomePageInfoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -389,6 +765,24 @@
 			buildConfigurations = (
 				B07E3DC421041CC9006957B8 /* Debug */,
 				B07E3DC521041CC9006957B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B092657B210501E200656648 /* Build configuration list for PBXNativeTarget "HomePage Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B092657C210501E200656648 /* Debug */,
+				B092657D210501E200656648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0DEEFA72104F81A002F55FC /* Build configuration list for PBXNativeTarget "HomePageInfoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0DEEFA82104F81A002F55FC /* Debug */,
+				B0DEEFA92104F81A002F55FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
