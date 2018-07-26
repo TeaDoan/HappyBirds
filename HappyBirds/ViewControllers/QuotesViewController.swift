@@ -62,7 +62,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
         cell.layer.borderWidth = 10
         cell.quoteLabel.text = quoteAtIndexPath.quote
         cell.quoteLabel.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        cell.authorLabel.text = quoteAtIndexPath.author
+        cell.authorLabel.text = quoteAtIndexPath.author ?? "Unknown"
         cell.favoriteButton.contentMode = .scaleAspectFill
         
         return cell
@@ -71,7 +71,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
     //MARK : TableView Delegate
     
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 220
     }
     
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
