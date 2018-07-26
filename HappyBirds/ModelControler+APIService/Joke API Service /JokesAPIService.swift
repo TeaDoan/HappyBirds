@@ -13,8 +13,7 @@ class JokeAPIService {
     struct Contants {
         static let jokesBaseURL = URL(string:"http://api.icndb.com/jokes/$jokenumber")
     }
-   static let shared = JokeAPIService()
-    func fetchJokes(completion: @escaping ([Value]?) -> Void) {
+   static func fetchJokes(completion: @escaping ([Value]?) -> Void) {
         guard let url = Contants.jokesBaseURL else {return}
         URLSession.shared.dataTask(with: url) { (data , _, error) in
             if let error = error {

@@ -68,7 +68,7 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 // MARK - Methods
     
     func updateViews() {
-        JokeAPIService.shared.fetchJokes { (joke) in
+        JokeAPIService.fetchJokes { (joke) in
             guard let joke = joke else {return}
             DispatchQueue.main.async {
                 self.jokes = joke

@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
