@@ -14,6 +14,7 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         static let jokeCellIdentifier = "jokeCell"
     }
    private var jokes : [Value] = []
+    private var jokeResults : [SearchJokes] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,14 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewWillAppear(animated)
         updateViews()
     }
-// MARK - Properties
+// MARK - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+// MARK - IBActions
     
 // MARK - TableView DataSource
     
@@ -68,6 +71,17 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 190
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05, 1.05, 1)
+        },completion: { finished in
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
+            })
+        })
+    }
+    
 // MARK - Methods
     
     func updateViews() {
@@ -93,5 +107,7 @@ extension UIView {
         self.layer.insertSublayer(gradient, at: 0)
     }
 }
+
+ 
 
 

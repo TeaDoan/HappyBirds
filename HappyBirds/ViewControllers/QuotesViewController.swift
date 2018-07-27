@@ -19,6 +19,8 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
       fetchQuotes()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +65,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
         cell.quoteLabel.text = quoteAtIndexPath.quote
         cell.quoteLabel.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         cell.authorLabel.text = quoteAtIndexPath.author ?? "Unknown"
+        cell.delegate = QuotesModelController.shared
         cell.favoriteButton.contentMode = .scaleAspectFill
         
         return cell
@@ -79,7 +82,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
     let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0)
             cell.layer.transform = rotationTransform
             //Define the final state (After the animation)
-            UIView.animate(withDuration: 1.0, animations: { cell.layer.transform = CATransform3DIdentity })
+            UIView.animate(withDuration: 0.9, animations: { cell.layer.transform = CATransform3DIdentity })
         }
     
     //MARK : Methods
@@ -89,15 +92,17 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
             guard let quotes = quotes else {return}
             DispatchQueue.main.async {
                 self.quotes = quotes
-                self.tableView.reloadData()
+//                self.tableView.reloadData()
+                QuotesAPIService.getProgrammingQuote { (pQuote) in
+                    guard let pQuote = pQuote else {return}
+                    self.quotes = pQuote
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+                
             }
         }
-        QuotesAPIService.getProgrammingQuote { (pQuote) in
-            guard let pQuote = pQuote else {return}
-            DispatchQueue.main.async {
-                self.quotes = pQuote
-                self.tableView.reloadData()
-            }
-        }
+        
     }
 }

@@ -12,6 +12,7 @@ class QuotesAPIService {
    private struct Contants {
       static let getQuotesBaseURL = URL(string:"https://talaikis.com/api/quotes/")
       static let programmingQuoteURL = URL(string:"http://quotes.stormconsultancy.co.uk/popular.json")
+     
     }
    static func getQuotes(completion: @escaping ([Quotes]?) -> Void) {
         guard let url = Contants.getQuotesBaseURL else {
@@ -64,5 +65,7 @@ class QuotesAPIService {
             }
             }.resume()
     }
+    
+  
     
 }

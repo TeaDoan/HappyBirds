@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B016B1D1210BC7B800FE59F3 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016B1D0210BC7B800FE59F3 /* SearchTableViewCell.swift */; };
+		B0254726210ABF08004BCC67 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0254725210ABF08004BCC67 /* FavoriteTableViewController.swift */; };
+		B0254728210AC10E004BCC67 /* SearchJokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0254727210AC10E004BCC67 /* SearchJokes.swift */; };
+		B025472C210AC5BE004BCC67 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025472B210AC5BE004BCC67 /* FavoriteTableViewCell.swift */; };
+		B025472F210ACF2E004BCC67 /* QuotesModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025472E210ACF2E004BCC67 /* QuotesModelController.swift */; };
+		B0254731210B93FD004BCC67 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0254730210B93FD004BCC67 /* SearchViewController.swift */; };
 		B05E6EB121057AD4008C82DD /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E6EB021057AD4008C82DD /* JokesViewController.swift */; };
 		B05E6EB321057AF8008C82DD /* JokesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E6EB221057AF8008C82DD /* JokesTableViewCell.swift */; };
 		B05E6EB521057CFC008C82DD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E6EB421057CFC008C82DD /* CoreDataStack.swift */; };
@@ -79,6 +85,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B016B1D0210BC7B800FE59F3 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		B0254725210ABF08004BCC67 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		B0254727210AC10E004BCC67 /* SearchJokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJokes.swift; sourceTree = "<group>"; };
+		B025472B210AC5BE004BCC67 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		B025472E210ACF2E004BCC67 /* QuotesModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesModelController.swift; sourceTree = "<group>"; };
+		B0254730210B93FD004BCC67 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B05E6EB021057AD4008C82DD /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
 		B05E6EB221057AF8008C82DD /* JokesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesTableViewCell.swift; sourceTree = "<group>"; };
 		B05E6EB421057CFC008C82DD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -139,9 +151,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B025472D210ACEF1004BCC67 /* Quotes Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B025472E210ACF2E004BCC67 /* QuotesModelController.swift */,
+			);
+			path = "Quotes Controller";
+			sourceTree = "<group>";
+		};
 		B05E6EB621058001008C82DD /* ModelControler+APIService */ = {
 			isa = PBXGroup;
 			children = (
+				B025472D210ACEF1004BCC67 /* Quotes Controller */,
 				B0707AEE21097C4B00AAE476 /* Quotes API Service */,
 				B0F137842107B82F00A24799 /* Joke API Service  */,
 			);
@@ -241,6 +262,8 @@
 		B0DEEF7F210427B5002F55FC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B016B1D0210BC7B800FE59F3 /* SearchTableViewCell.swift */,
+				B025472B210AC5BE004BCC67 /* FavoriteTableViewCell.swift */,
 				B0707AF421098A5700AAE476 /* QuotesTableViewCell.swift */,
 				B05E6EB221057AF8008C82DD /* JokesTableViewCell.swift */,
 				B07E3DB521041CC6006957B8 /* Main.storyboard */,
@@ -260,6 +283,8 @@
 		B0DEEF812104286A002F55FC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B0254730210B93FD004BCC67 /* SearchViewController.swift */,
+				B0254725210ABF08004BCC67 /* FavoriteTableViewController.swift */,
 				B0707AF22109883C00AAE476 /* QuotesViewController.swift */,
 				B05E6EB021057AD4008C82DD /* JokesViewController.swift */,
 				B0DEEF83210428D3002F55FC /* HomeViewController.swift */,
@@ -272,6 +297,7 @@
 			children = (
 				B0707AEA2109794700AAE476 /* Quotes.swift */,
 				B0707AE82109166300AAE476 /* Jokes.swift */,
+				B0254727210AC10E004BCC67 /* SearchJokes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,10 +483,16 @@
 				B05E6EB321057AF8008C82DD /* JokesTableViewCell.swift in Sources */,
 				B05E6EB121057AD4008C82DD /* JokesViewController.swift in Sources */,
 				B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */,
+				B025472F210ACF2E004BCC67 /* QuotesModelController.swift in Sources */,
+				B016B1D1210BC7B800FE59F3 /* SearchTableViewCell.swift in Sources */,
+				B025472C210AC5BE004BCC67 /* FavoriteTableViewCell.swift in Sources */,
 				B0707AED21097C4000AAE476 /* QuotesAPIService.swift in Sources */,
+				B0254731210B93FD004BCC67 /* SearchViewController.swift in Sources */,
 				B05E6EB821058052008C82DD /* JokesAPIService.swift in Sources */,
+				B0254728210AC10E004BCC67 /* SearchJokes.swift in Sources */,
 				B0707AE92109166300AAE476 /* Jokes.swift in Sources */,
 				B07E3DCE2104262B006957B8 /* UIColor+Extension.swift in Sources */,
+				B0254726210ABF08004BCC67 /* FavoriteTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
