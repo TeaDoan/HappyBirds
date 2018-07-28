@@ -92,12 +92,12 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
             guard let quotes = quotes else {return}
             DispatchQueue.main.async {
                 self.quotes = quotes
-//                self.tableView.reloadData()
+                self.tableView.reloadData()
                 QuotesAPIService.getProgrammingQuote { (pQuote) in
                     guard let pQuote = pQuote else {return}
-                    self.quotes = pQuote
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        self.quotes.append(contentsOf: pQuote)
+                       self.tableView.reloadData()
                     }
                 }
                 

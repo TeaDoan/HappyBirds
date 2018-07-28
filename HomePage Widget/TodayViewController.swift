@@ -11,6 +11,10 @@ import NotificationCenter
 import HomePageInfoKit
 
 class TodayViewController: UIViewController, NCWidgetProviding {
+    
+    // MARK - Properties
+    
+   var defaults = UserDefaults(suiteName:"group.teaDoan.happyBirdsWidget")!
         
     override func viewDidLoad() {
         super.viewDidLoad()
