@@ -6,44 +6,49 @@
 //  Copyright © 2018 Thao Doan. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class FavoriteTableViewController: UITableViewController {
     
-    var photoArray = ["us1", "us2", "us3", "us4"]
-
+    lazy var fetchedResultsController: NSFetchedResultsController<Favorite> = {
+        let request = NSFetchRequest<Favorite>(entityName: "Favorite")
+        let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        let frc = NSFetchedResultsController(fetchRequest: request,
+                                             managedObjectContext: CoreDataStack.shared.context,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        frc.delegate = self
+        return frc
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-       
+        
+        try? fetchedResultsController.performFetch()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return photoArray.count
+        return fetchedResultsController.fetchedObjects?.count ?? 0
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favorite", for: indexPath) as! FavoriteTableViewCell
-        let image = UIImage(named:photoArray[indexPath.row])
-        cell.imageView?.image = image
-        cell.imageView?.contentMode = .scaleAspectFit
+        let favorite = fetchedResultsController.object(at: indexPath)
+        cell.bodyTextLabel.text = favorite.text
+    
         return cell
     }
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
            
         }    
@@ -58,3 +63,31 @@ class FavoriteTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
 }
+
+extension FavoriteTableViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+            switch type {
+            case .insert:
+                if let indexPath = newIndexPath {
+                    tableView.insertRows(at: [indexPath], with: .automatic)
+                }
+            case .delete:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            case .update:
+                if let indexPath = indexPath {
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+            case .move: return
+            }
+        }
+        
+        
+    }
+

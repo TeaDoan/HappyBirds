@@ -14,7 +14,7 @@ class QuotesAPIService {
       static let programmingQuoteURL = URL(string:"http://quotes.stormconsultancy.co.uk/popular.json")
      
     }
-   static func getQuotes(completion: @escaping ([Quotes]?) -> Void) {
+   static func getQuotes(completion: @escaping ([Quote]?) -> Void) {
         guard let url = Contants.getQuotesBaseURL else {
             print("Error with baseURL")
             completion(nil)
@@ -28,7 +28,7 @@ class QuotesAPIService {
             guard let data = data else {return}
             let jsonDecoder = JSONDecoder()
             do {
-                let quoteDict = try jsonDecoder.decode([Quotes].self, from: data)
+                let quoteDict = try jsonDecoder.decode([Quote].self, from: data)
                 let quotesData = quoteDict.compactMap{$0}
                 completion(quotesData)
                 return
@@ -40,7 +40,7 @@ class QuotesAPIService {
         }.resume()
     }
     
-  static func getProgrammingQuote(completion: @escaping ([Quotes]?) -> Void) {
+  static func getProgrammingQuote(completion: @escaping ([Quote]?) -> Void) {
         guard let url = Contants.programmingQuoteURL else {
             print("Error with baseURL")
             completion(nil)
@@ -54,7 +54,7 @@ class QuotesAPIService {
             guard let data = data else {return}
             let jsonDecoder = JSONDecoder()
             do {
-                let quoteDict = try jsonDecoder.decode([Quotes].self, from: data)
+                let quoteDict = try jsonDecoder.decode([Quote].self, from: data)
                 let quotesData = quoteDict.compactMap{$0}
                 completion(quotesData)
                 return

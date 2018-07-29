@@ -542,6 +542,7 @@
                                                             </constraints>
                                                             <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                             <state key="normal" image="favorite"/>
+                                                            <state key="selected" image="favoriteActive"/>
                                                             <connections>
                                                                 <action selector="favoriteButtonTapped:" destination="L46-tM-Qoq" eventType="touchUpInside" id="5eA-Kl-tS7"/>
                                                             </connections>
@@ -703,6 +704,7 @@
         <image name="TabBarIcons/tabbar:quote-active" width="21" height="21"/>
         <image name="bulletButtonView" width="21" height="14"/>
         <image name="favorite" width="320" height="320"/>
+        <image name="favoriteActive" width="64" height="64"/>
         <image name="search" width="20" height="21"/>
         <image name="searchActive" width="20" height="21"/>
         <image name="share" width="64" height="58"/>

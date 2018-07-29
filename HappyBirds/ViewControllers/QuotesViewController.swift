@@ -6,22 +6,37 @@
 //  Copyright © 2018 Thao Doan. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
-class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Favorite> = {
+        let request = NSFetchRequest<Favorite>(entityName: "Favorite")
+        let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        let frc = NSFetchedResultsController(fetchRequest: request,
+                                             managedObjectContext: CoreDataStack.shared.context,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        return frc
+    }()
     
     //MARK : Properties
      var photoArray = Array(1...104).compactMap {"us\($0)"}
     var imageDictionary = [IndexPath : UIImage]()
     var randomImageIndecies = Array(0...103)
     let cellIdentifier = "quoteCell"
-    private var quotes : [Quotes] = []
+    private var quotes : [Quote] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
+        
+        try? fetchedResultsController.performFetch()
+        
+        let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-      fetchQuotes()
+        fetchQuotes()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,8 +80,9 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
         cell.quoteLabel.text = quoteAtIndexPath.quote
         cell.quoteLabel.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         cell.authorLabel.text = quoteAtIndexPath.author ?? "Unknown"
-        cell.delegate = QuotesModelController.shared
         cell.favoriteButton.contentMode = .scaleAspectFill
+        cell.delegate = self
+        cell.favoriteButton.isSelected = quoteAtIndexPath.isFavorite ?? false
         
         return cell
     }
@@ -88,21 +104,43 @@ class QuotesViewController: UIViewController, UITableViewDelegate,UITableViewDat
     //MARK : Methods
     
     func fetchQuotes() {
-        QuotesAPIService.getQuotes { (quotes) in
+        
+        QuotesAPIService.getQuotes { quotes in
             guard let quotes = quotes else {return}
             DispatchQueue.main.async {
+                quotes.forEach { $0.isFavorite = self.existsInCoreData(quote: $0) }
                 self.quotes = quotes
                 self.tableView.reloadData()
-                QuotesAPIService.getProgrammingQuote { (pQuote) in
-                    guard let pQuote = pQuote else {return}
+                QuotesAPIService.getProgrammingQuote { pQuotes in
+                    guard let pQuotes = pQuotes else {return}
                     DispatchQueue.main.async {
-                        self.quotes.append(contentsOf: pQuote)
-                       self.tableView.reloadData()
+                        pQuotes.forEach { $0.isFavorite = self.existsInCoreData(quote: $0) }
+                        self.quotes.append(contentsOf: pQuotes)
+                        self.tableView.reloadData()
                     }
                 }
                 
             }
         }
+    }
+    
+    func existsInCoreData(quote: Quote) -> Bool {
+        let favorites = self.fetchedResultsController.fetchedObjects ?? []
+        return favorites.contains(where: { $0.text == quote.quote })
+    }
+}
+
+extension QuotesViewController: FavoriteButtonClickDelegate {
+    
+    func didSet(cell: QuotesTableViewCell, isFavorite: Bool) {
+        guard let path = tableView.indexPath(for: cell)?.row else { return }
+        let quote = quotes[path]
+        quote.isFavorite = isFavorite
         
+        if isFavorite {
+            CoreDataStack.shared.addToFavorites(quote: quote)
+        } else {
+            CoreDataStack.shared.deleteFromFavorites(quote: quote)
+        }
     }
 }

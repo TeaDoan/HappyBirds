@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-         UITabBar.appearance().barTintColor = #colorLiteral(red: 0.1607843137, green: 0.168627451, blue: 0.2078431373, alpha: 1)
+//         UITabBar.appearance().barTintColor = #colorLiteral(red: 0.1607843137, green: 0.168627451, blue: 0.2078431373, alpha: 1)
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.2156862745, green: 0.2352941176, blue: 0.3960784314, alpha: 1)
          UITabBar.appearance().tintColor = #colorLiteral(red: 0.2196078431, green: 0.8117647059, blue: 0.5882352941, alpha: 1)
         return true
     }
@@ -37,6 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        CoreDataStack.share.saveContext()
+        CoreDataStack.shared.saveContext()
     }
 }

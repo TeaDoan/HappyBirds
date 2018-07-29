@@ -9,10 +9,12 @@
 import Foundation
 
 // 2 network calls is using this class because the json format are the same
-class Quotes: Codable{
+class Quote: Codable {
+    
     var author: String?
     var quote : String?
     var isFavorite: Bool? = false
+    
     init(author: String, quote:String, isFavorite: Bool = false) {
         self.author = author
         self.quote = quote

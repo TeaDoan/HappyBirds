@@ -17,7 +17,7 @@ class HomeOptionsTableViewController: UITableViewController {
     
     var selectedCategory = "" {
         didSet {
-            var options = selectedOption.split { $0 == "," }.map {String($0)}
+//            var options = selectedOption.split { $0 == "," }.map {String($0)}
             selectedOption = options[0]
         }
     }
