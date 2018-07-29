@@ -197,6 +197,7 @@
                                                             </constraints>
                                                             <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="10" maxY="0.0"/>
                                                             <state key="normal" title="Button" image="favorite"/>
+                                                            <state key="selected" image="favoriteActive"/>
                                                             <connections>
                                                                 <action selector="favoriteButtonTapped:" destination="GBe-if-t3B" eventType="touchUpInside" id="5AI-RL-Clg"/>
                                                             </connections>
@@ -352,7 +353,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="zak-RJ-3uM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16078431372549018" green="0.16862745098039217" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.2156862745" green="0.23529411759999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                         </textAttributes>
@@ -408,10 +409,10 @@
                                             <rect key="frame" x="20" y="20" width="335" height="113.5"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eht-sh-6MN">
-                                                    <rect key="frame" x="303" y="0.0" width="32" height="32"/>
+                                                    <rect key="frame" x="311" y="0.0" width="24" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="2yV-Rj-1ce"/>
-                                                        <constraint firstAttribute="width" constant="32" id="hj2-zt-Sb9"/>
+                                                        <constraint firstAttribute="height" constant="24" id="2yV-Rj-1ce"/>
+                                                        <constraint firstAttribute="width" constant="24" id="hj2-zt-Sb9"/>
                                                     </constraints>
                                                     <state key="normal" image="share"/>
                                                     <connections>
@@ -420,16 +421,16 @@
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="adf-lb-hfT">
-                                                    <rect key="frame" x="0.0" y="32" width="335" height="81.5"/>
+                                                    <rect key="frame" x="0.0" y="24" width="335" height="89.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU9-17-rpG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="38.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU9-17-rpG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="42.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xH4-EE-5CS">
-                                                            <rect key="frame" x="0.0" y="43.5" width="335" height="38"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xH4-EE-5CS">
+                                                            <rect key="frame" x="0.0" y="47.5" width="335" height="42"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -617,7 +618,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="P0n-0U-YeX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16078431369999999" green="0.16862745100000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.2156862745" green="0.23529411759999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -637,7 +638,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="2oO-nC-Vhb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16078431372549021" green="0.16862745098039217" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.2156862745" green="0.23529411759999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -658,7 +659,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.14509803921568629" green="0.14901960784313725" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.2156862745" green="0.23529411759999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rbc-Pi-rP8">
@@ -680,7 +681,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="AUr-kn-Oul">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.27843137254901962" green="0.28627450980392155" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.21568627450980393" green="0.23529411764705882" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -704,7 +705,7 @@
         <image name="TabBarIcons/tabbar:quote-active" width="21" height="21"/>
         <image name="bulletButtonView" width="21" height="14"/>
         <image name="favorite" width="320" height="320"/>
-        <image name="favoriteActive" width="64" height="64"/>
+        <image name="favoriteActive" width="160" height="160"/>
         <image name="search" width="20" height="21"/>
         <image name="searchActive" width="20" height="21"/>
         <image name="share" width="64" height="58"/>

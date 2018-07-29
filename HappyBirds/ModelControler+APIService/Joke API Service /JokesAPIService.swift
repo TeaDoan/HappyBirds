@@ -14,7 +14,7 @@ class JokeAPIService {
         static let jokesBaseURL = URL(string:"http://api.icndb.com/jokes/$jokenumber")
         static let searchForJokes = URL(string: "https://icanhazdadjoke.com/search")
     }
-   static func fetchJokes(completion: @escaping ([Value]?) -> Void) {
+   static func fetchJokes(completion: @escaping ([Joke]?) -> Void) {
         guard let url = Contants.jokesBaseURL else {return}
         URLSession.shared.dataTask(with: url) { (data , _, error) in
             if let error = error {

@@ -9,8 +9,14 @@
 import Foundation
 
 struct JokeTopLevelJson: Codable {
-    var value : [Value]
+    var value : [Joke]
 }
-struct Value: Codable {
-    let joke : String
+class Joke: Codable {
+    let joke : String?
+    var isFavorite : Bool? = false
+    init(joke:String, isFavorite: Bool = false) {
+        self.joke = joke
+        self.isFavorite = isFavorite
+    }
+    
 }

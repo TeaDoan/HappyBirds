@@ -83,7 +83,6 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.favoriteButton.contentMode = .scaleAspectFill
         cell.delegate = self
         cell.favoriteButton.isSelected = quoteAtIndexPath.isFavorite ?? false
-        
         return cell
     }
     
