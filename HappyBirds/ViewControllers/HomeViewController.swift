@@ -54,43 +54,9 @@ class HomeViewController: UIViewController {
                     self.bodyTextView.text = jokes.joke
                     self.bodyTextView.contentMode = .center
                     self.titleLabel.text = self.homeTitle
-        }
-       }
-        } else if homeTitle == "Random Daily Quotes"{
-                RandomJokesController.fetchQuote(completion: { (quote) in
-                    guard let quote = quote else {return}
-                    DispatchQueue.main.async {
-                        self.bodyTextView.text = quote.first?.quote
-                        self.authorLabel.text = quote.first?.author
-                        self.titleLabel.text = self.homeTitle
-                    }
-                })
+                }
+                
             }
-           
-        }
-    
-    
-   
-    @IBAction func unwindHome(segue: UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func updateHomeContentInfo(seuge: UIStoryboardSegue) {
-        let sourViewController = seuge.source as! HomeOptionsTableViewController
-        
-        homeTitle = sourViewController.selectedOption
-        fetchJokes()
-
-}
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "showOptions" {
-            let destinationController = segue.destination as! UINavigationController
-            let homeOptionsTableViewCntroler = destinationController.viewControllers[0] as! HomeOptionsTableViewController
-            homeOptionsTableViewCntroler.selectedCategory = "\(homeTitle)"
         }
     }
 }

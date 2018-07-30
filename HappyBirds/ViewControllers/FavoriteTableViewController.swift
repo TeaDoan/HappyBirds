@@ -30,19 +30,17 @@ class FavoriteTableViewController: UITableViewController {
         
         try? fetchedResultsController.performFetch()
     }
-
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.fetchedObjects?.count ?? 0
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favorite", for: indexPath) as! FavoriteTableViewCell
         let favorite = fetchedResultsController.object(at: indexPath)
         cell.bodyTextLabel.text = favorite.text
-    
         return cell
     }
     
@@ -55,45 +53,49 @@ class FavoriteTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-        } else if editingStyle == .insert {
-           
+            if let contentToDeleleAtIndexPath = fetchedResultsController.fetchedObjects?[indexPath.row] {
+                 CoreDataStack.shared.delete(item: contentToDeleleAtIndexPath)
+            }
         }    
     }
   
-
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "cellToShare"{
+            guard  let shareDestination = segue.destination as? FavoriteToShareViewController else {return}
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            guard let contenToPass = fetchedResultsController.fetchedObjects?[indexPath.row] else {return}
+            shareDestination.favoriteToShare = contenToPass
+        }
     }
 }
 
 extension FavoriteTableViewController: NSFetchedResultsControllerDelegate {
-    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
+//        self.tableView.endUpdates()
     }
+//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        tableView.beginUpdates()
+//    }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-            switch type {
-            case .insert:
-                if let indexPath = newIndexPath {
-                    tableView.insertRows(at: [indexPath], with: .automatic)
-                }
-            case .delete:
-                if let indexPath = indexPath {
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-            case .update:
-                if let indexPath = indexPath {
-                    tableView.reloadRows(at: [indexPath], with: .automatic)
-                }
-            case .move: return
+        switch type {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .automatic)
             }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        case .move: return
         }
-        
-        
     }
+}
 

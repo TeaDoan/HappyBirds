@@ -13,7 +13,7 @@ struct JokeTopLevelJson: Codable {
 }
 class Joke: Codable {
     let joke : String?
-    var isFavorite : Bool? = false
+    var isFavorite : Bool?
     init(joke:String, isFavorite: Bool = false) {
         self.joke = joke
         self.isFavorite = isFavorite
