@@ -15,7 +15,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // MARK - Properties
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         RandomJokesController.fetchRanDomJoke { (jokes) in
             guard let jokes = jokes else {return}
             DispatchQueue.main.async {

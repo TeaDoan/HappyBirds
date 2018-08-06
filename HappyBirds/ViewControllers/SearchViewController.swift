@@ -19,6 +19,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
          searchBar.delegate = self
+        let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

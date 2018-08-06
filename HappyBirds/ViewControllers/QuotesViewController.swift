@@ -92,13 +92,13 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 220
     }
     
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            // IF you want this animation uncomment these lines.
-    let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0)
-            cell.layer.transform = rotationTransform
-            //Define the final state (After the animation)
-            UIView.animate(withDuration: 0.9, animations: { cell.layer.transform = CATransform3DIdentity })
-        }
+//  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//            // IF you want this animation uncomment these lines.
+//    let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0)
+//            cell.layer.transform = rotationTransform
+//            //Define the final state (After the animation)
+//            UIView.animate(withDuration: 0.9, animations: { cell.layer.transform = CATransform3DIdentity })
+//        }
     
     //MARK : Methods
     

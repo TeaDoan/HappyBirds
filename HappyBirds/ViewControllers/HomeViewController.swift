@@ -13,15 +13,16 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     
-    var homeTitle = "Random Daily Jokes"
+    var homeTitle = "Random Jokes"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
+         fetchJokes()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchJokes()
+        updateViews()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,15 +45,19 @@ class HomeViewController: UIViewController {
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: imageToShow)
         backgroundImageView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-        backgroundImageView.contentMode = .scaleAspectFit
+        backgroundImageView.contentMode = .scaleAspectFill
     }
     func fetchJokes() {
-        if homeTitle == "Random Daily Jokes" {
+        if homeTitle == "Random Jokes" {
             RandomJokesController.fetchRanDomJoke { (jokes) in
                 guard let jokes = jokes else {return}
                 DispatchQueue.main.async {
                     self.bodyTextView.text = jokes.joke
                     self.bodyTextView.contentMode = .center
+                    self.bodyTextView.layer.masksToBounds = true
+                    self.bodyTextView.layer.cornerRadius = 10
+                    self.bodyTextView.backgroundColor = #colorLiteral(red: 0.1607843137, green: 0.168627451, blue: 0.2078431373, alpha: 1).withAlphaComponent(0.2)
+                    self.bodyTextView.textContainerInset = UIEdgeInsetsMake(self.bodyTextView.bounds.height/4, 20, 0, 20);
                     self.titleLabel.text = self.homeTitle
                 }
                 
