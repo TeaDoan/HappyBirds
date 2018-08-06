@@ -68,6 +68,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 190
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
+    
     // MARK - Methods
 }
 
@@ -75,13 +79,13 @@ extension SearchViewController : UISearchBarDelegate{
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             searchBar.resignFirstResponder()
              UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            guard let searchText = searchBar.text?.lowercased() , !searchText.isEmpty else {return}
+            guard let searchText = searchBar.text?.lowercased() , searchText.isEmpty else {return}
             JokeAPIService.searchJokes(searchTerm: searchText) { (jokes) in
                 guard let jokes = jokes else {return}
                 DispatchQueue.main.async {
-                    self.jokeResults = jokes
-                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.tableView.reloadData()
+                self.jokeResults = jokes
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.tableView.reloadData()
                 }
             }
            searchBar.text = ""

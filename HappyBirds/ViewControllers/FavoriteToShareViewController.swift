@@ -54,13 +54,8 @@ class FavoriteToShareViewController: UIViewController, UIImagePickerControllerDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//                shareImageView.image = image
-//                userPhoto = shareImageView.image
-//                shareImageView.contentMode = .scaleAspectFill
-            
             state = .user(image)
         }
-        
         picker.dismiss(animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -81,8 +76,13 @@ class FavoriteToShareViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
-        shareImageView.contentMode = .scaleAspectFill
-        let userActivityController = UIActivityViewController(activityItems: [ textToImage(drawText: contentLabel.text!, inImage: shareImageView.asImage(), atPoint: CGPoint(x: 0, y: Int(shareImageView.frame.height - contentLabel.frame.height)*2))], applicationActivities: nil)
+        var userActivityController : UIActivityViewController
+        if shareImageView.image == nil {
+            userActivityController = UIActivityViewController(activityItems: [contentLabel.text ?? "There is nothing to share"], applicationActivities: nil)
+        } else {
+            userActivityController = UIActivityViewController(activityItems: [ textToImage(drawText: contentLabel.text!, inImage: shareImageView.asImage(), atPoint: CGPoint(x: 0, y: Int(shareImageView.frame.height - contentLabel.frame.height)*2))], applicationActivities: nil)
+        }
+       
        
         present(userActivityController, animated: true, completion: nil)
         
@@ -107,7 +107,7 @@ class FavoriteToShareViewController: UIViewController, UIImagePickerControllerDe
     
     func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
         let textColor = UIColor.white
-        let textFont = UIFont(name: "Helvetica Bold", size: 18)!
+        let textFont = UIFont(name: "Helvetica Bold", size: 20)!
         let background = UIColor.black.withAlphaComponent(0.3)
         let scale = UIScreen.main.scale
         UIGraphicsBeginImageContextWithOptions(image.size,false, scale)

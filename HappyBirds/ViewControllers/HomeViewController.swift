@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
          fetchJokes()
     }
     override func viewWillAppear(_ animated: Bool) {

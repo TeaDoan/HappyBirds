@@ -26,6 +26,7 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         static let jokeCellIdentifier = "jokeCell"
     }
     private var jokes : [Joke] = []
+    var loaedIndexPath : IndexPath?
     override func viewDidLoad() {
         super.viewDidLoad()
       try? fetchedResultsController.performFetch()
@@ -97,7 +98,7 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func existsInCoreData(joke: Joke) -> Bool {
         let favorites = self.fetchedResultsController.fetchedObjects ?? []
-        return favorites.contains(where: { $0.text == joke.joke })
+        return favorites.contains(where:{ $0.text == joke.joke })
     }
 }
 
