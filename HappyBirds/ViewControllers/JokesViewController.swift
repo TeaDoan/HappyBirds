@@ -73,6 +73,7 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
         cell.jokeLabel.text = jokeAtIndexPath.joke
+        cell.jokeLabel.textAlignment = .center
         cell.delegate = self
         cell.favoriteButton.isSelected = jokeAtIndexPath.isFavorite ?? false
         return cell
@@ -121,9 +122,9 @@ extension JokesViewController: FavoriteJokeButtonClickDelegate {
         let joke = jokes[path]
         joke.isFavorite = isFavorite
         if isFavorite {
-            CoreDataStack.shared.addJokesToFavorites(joke:joke)
+            CoreDataStack.shared.addJokesToFavrites(joke:joke)
         } else {
-            CoreDataStack.shared.deleteJokeFromFavorites(joke:joke)
+            CoreDataStack.shared.deleteJokeFromFavorites(for:joke)
         }
     }
 }

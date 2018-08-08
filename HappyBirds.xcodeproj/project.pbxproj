@@ -24,6 +24,8 @@
 		B0707AED21097C4000AAE476 /* QuotesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0707AEC21097C4000AAE476 /* QuotesAPIService.swift */; };
 		B0707AF32109883C00AAE476 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0707AF22109883C00AAE476 /* QuotesViewController.swift */; };
 		B0707AF521098A5700AAE476 /* QuotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0707AF421098A5700AAE476 /* QuotesTableViewCell.swift */; };
+		B07A8A1B21191107000DA3F0 /* SubClassTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A8A1A21191107000DA3F0 /* SubClassTabBarViewController.swift */; };
+		B07A8A1F211A313F000DA3F0 /* HappyBirdLaunchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A8A1E211A313F000DA3F0 /* HappyBirdLaunchPageViewController.swift */; };
 		B07E3DB221041CC6006957B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB121041CC6006957B8 /* AppDelegate.swift */; };
 		B07E3DB721041CC6006957B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07E3DB521041CC6006957B8 /* Main.storyboard */; };
 		B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B07E3DB821041CC6006957B8 /* HappyBirds.xcdatamodeld */; };
@@ -93,7 +95,7 @@
 		B016B1D5210CEBB700FE59F3 /* RandomQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuotes.swift; sourceTree = "<group>"; };
 		B016B1D7210CF81D00FE59F3 /* FavoriteToShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteToShareViewController.swift; sourceTree = "<group>"; };
 		B016B1D9210D1BE000FE59F3 /* HomePage Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HomePage Widget.entitlements"; sourceTree = "<group>"; };
-		B016B1DA210D366200FE59F3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = "../../../../../../Messages/Attachments/42/02/59AF6231-0B54-4AAD-BFB2-080B175BDDD3/Changed Folders 2/CoreData Helper /CoreDataStack.swift"; sourceTree = "<group>"; };
+		B016B1DA210D366200FE59F3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B016B1DF210D428300FE59F3 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		B016B1E1210D428A00FE59F3 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		B016B1E3210D428F00FE59F3 /* SearchJokes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchJokes.swift; sourceTree = "<group>"; };
@@ -106,6 +108,8 @@
 		B0707AEC21097C4000AAE476 /* QuotesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesAPIService.swift; sourceTree = "<group>"; };
 		B0707AF22109883C00AAE476 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		B0707AF421098A5700AAE476 /* QuotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTableViewCell.swift; sourceTree = "<group>"; };
+		B07A8A1A21191107000DA3F0 /* SubClassTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubClassTabBarViewController.swift; sourceTree = "<group>"; };
+		B07A8A1E211A313F000DA3F0 /* HappyBirdLaunchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBirdLaunchPageViewController.swift; sourceTree = "<group>"; };
 		B07E3DAE21041CC6006957B8 /* HappyBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07E3DB121041CC6006957B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B07E3DB621041CC6006957B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 		B0DEEF812104286A002F55FC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B07A8A1A21191107000DA3F0 /* SubClassTabBarViewController.swift */,
 				B0DEEF83210428D3002F55FC /* HomeViewController.swift */,
 				B05E6EB021057AD4008C82DD /* JokesViewController.swift */,
 				B0707AF22109883C00AAE476 /* QuotesViewController.swift */,
@@ -301,6 +306,7 @@
 				B0254730210B93FD004BCC67 /* SearchViewController.swift */,
 				B0254725210ABF08004BCC67 /* FavoriteTableViewController.swift */,
 				B016B1D3210CE29700FE59F3 /* HomeOptionsTableViewController.swift */,
+				B07A8A1E211A313F000DA3F0 /* HappyBirdLaunchPageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				B05E6EB121057AD4008C82DD /* JokesViewController.swift in Sources */,
 				B07E3DBA21041CC6006957B8 /* HappyBirds.xcdatamodeld in Sources */,
 				B016B1D1210BC7B800FE59F3 /* SearchTableViewCell.swift in Sources */,
+				B07A8A1F211A313F000DA3F0 /* HappyBirdLaunchPageViewController.swift in Sources */,
 				B025472C210AC5BE004BCC67 /* FavoriteTableViewCell.swift in Sources */,
 				B0707AED21097C4000AAE476 /* QuotesAPIService.swift in Sources */,
 				B016B1E2210D428A00FE59F3 /* Quote.swift in Sources */,
@@ -505,6 +512,7 @@
 				B016B1D4210CE29700FE59F3 /* HomeOptionsTableViewController.swift in Sources */,
 				B016B1E0210D428300FE59F3 /* Joke.swift in Sources */,
 				B016B1DB210D366200FE59F3 /* CoreDataStack.swift in Sources */,
+				B07A8A1B21191107000DA3F0 /* SubClassTabBarViewController.swift in Sources */,
 				B07E3DCE2104262B006957B8 /* UIColor+Extension.swift in Sources */,
 				B0254726210ABF08004BCC67 /* FavoriteTableViewController.swift in Sources */,
 			);

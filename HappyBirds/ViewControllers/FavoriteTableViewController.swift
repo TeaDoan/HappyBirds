@@ -27,12 +27,11 @@ class FavoriteTableViewController: UITableViewController {
         super.viewDidLoad()
         let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
         try? fetchedResultsController.performFetch()
     }
     
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.fetchedObjects?.count ?? 0
     }
@@ -52,21 +51,21 @@ class FavoriteTableViewController: UITableViewController {
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
         cell.bodyTextLabel.text = favorite.text
-        cell.detailLabel.text = favorite.author ?? "Unknown"
         return cell
     }
+    
     
     // MARK - TableView Delegate
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
     }
-    
+   
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let contentToDeleleAtIndexPath = fetchedResultsController.fetchedObjects?[indexPath.row] {
-                 CoreDataStack.shared.delete(item: contentToDeleleAtIndexPath)
+                CoreDataStack.shared.delete(object: contentToDeleleAtIndexPath)
             }
         }    
     }
@@ -86,12 +85,7 @@ class FavoriteTableViewController: UITableViewController {
 extension FavoriteTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
-//        self.tableView.endUpdates()
     }
-//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        tableView.beginUpdates()
-//    }
-    
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:

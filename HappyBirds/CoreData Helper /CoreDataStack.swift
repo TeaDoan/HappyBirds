@@ -39,6 +39,11 @@ class CoreDataStack {
         }
     }
     
+    func delete (object: Favorite) {
+        context.delete(object)
+        try? context.save()
+    }
+    
     func addToFavorites(quote: Quote) {
         guard let favDesc = NSEntityDescription.entity(forEntityName: "Favorite", in: context) else { return }
         let favorite = NSManagedObject(entity: favDesc, insertInto: context)
@@ -60,4 +65,28 @@ class CoreDataStack {
         context.delete(favorite)
         try? context.save()
     }
+    
+    func addJokesToFavrites(joke:Joke) {
+        guard let favDesc = NSEntityDescription.entity(forEntityName: "Favorite", in: context) else { return }
+        let favorite = NSManagedObject(entity: favDesc, insertInto: context)
+        favorite.setValue(Date(), forKey: "dateAdded")
+        favorite.setValue(joke.joke, forKey: "text")
+        try? context.save()
+    }
+    
+    func favoriteJoke(for joke: Joke) -> Favorite? {
+        let request = NSFetchRequest<Favorite>(entityName: "Favorite")
+        request.predicate = NSPredicate(format: "text == %@", joke.joke ?? "")
+        guard let results = try? context.fetch(request) else { return nil }
+        return results.first
+    }
+    
+    
+    func deleteJokeFromFavorites(for joke : Joke) {
+        guard let favorite = favoriteJoke(for: joke) else {return}
+        context.delete(favorite)
+        try? context.save()
+    }
+    
+    
 }

@@ -19,6 +19,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
          searchBar.delegate = self
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.white
         let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
@@ -56,8 +57,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         whiteRoundedView.applyGradient(colours:[UIColor.rgb(71, 207, 171),UIColor.rgb(56, 207, 150)] )
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
-        cell.bodyLabel.text = result.joke 
-        cell.detailsLabel.text = "Unknown"
+        cell.bodyLabel.text = result.joke ?? "No results found"
         tableView.separatorStyle = .none
         return cell
     }
@@ -79,7 +79,7 @@ extension SearchViewController : UISearchBarDelegate{
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             searchBar.resignFirstResponder()
              UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            guard let searchText = searchBar.text?.lowercased() , searchText.isEmpty else {return}
+            guard let searchText = searchBar.text?.lowercased() , !searchText.isEmpty else {return}
             JokeAPIService.searchJokes(searchTerm: searchText) { (jokes) in
                 guard let jokes = jokes else {return}
                 DispatchQueue.main.async {
@@ -88,7 +88,6 @@ extension SearchViewController : UISearchBarDelegate{
                 self.tableView.reloadData()
                 }
             }
-           searchBar.text = ""
         }
    
     
