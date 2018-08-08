@@ -93,7 +93,7 @@
 		B016B1D5210CEBB700FE59F3 /* RandomQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuotes.swift; sourceTree = "<group>"; };
 		B016B1D7210CF81D00FE59F3 /* FavoriteToShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteToShareViewController.swift; sourceTree = "<group>"; };
 		B016B1D9210D1BE000FE59F3 /* HomePage Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HomePage Widget.entitlements"; sourceTree = "<group>"; };
-		B016B1DA210D366200FE59F3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = "../../../../../../Messages/Attachments/42/02/59AF6231-0B54-4AAD-BFB2-080B175BDDD3/Changed Folders 2/CoreData Helper /CoreDataStack.swift"; sourceTree = "<group>"; };
+		B016B1DA210D366200FE59F3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B016B1DF210D428300FE59F3 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		B016B1E1210D428A00FE59F3 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		B016B1E3210D428F00FE59F3 /* SearchJokes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchJokes.swift; sourceTree = "<group>"; };
