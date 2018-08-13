@@ -15,12 +15,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // MARK - Properties
     override func viewDidLoad() {
         super.viewDidLoad()
-        RandomJokesController.fetchRanDomJoke { (jokes) in
-            guard let jokes = jokes else {return}
-            DispatchQueue.main.async {
-                self.bodyTextLabel.text = jokes.joke
-            }
-        }
+//        RandomJokesController.fetchRanDomJoke { (jokes) in
+//            guard let jokes = jokes else {return}
+//            DispatchQueue.main.async {
+//                self.bodyTextLabel.text = jokes.joke
+//            }
+//        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+                RandomJokesController.fetchRanDomJoke { (jokes) in
+                    guard let jokes = jokes else {return}
+                    DispatchQueue.main.async {
+                        self.bodyTextLabel.text = jokes.joke
+                    }
+                }
     }
     
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -37,7 +46,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 return
             }
             OperationQueue.main.addOperation {() -> Void in
-                self.bodyTextLabel.text = jokeData.joke
+                self.bodyTextLabel.text = jokeData.joke.capitalized
+                self.bodyTextLabel.textAlignment = .center
             }
         }
         

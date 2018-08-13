@@ -23,7 +23,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }()
     
     //MARK : Properties
-     var photoArray = Array(1...104).compactMap {"us\($0)"}
+    var photoArray = Array(1...104).compactMap {"us\($0)"}
     var imageDictionary = [IndexPath : UIImage]()
     var randomImageIndecies = Array(0...103)
     let cellIdentifier = "quoteCell"
@@ -34,7 +34,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         try? fetchedResultsController.performFetch()
         
-        let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
+        let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         fetchQuotes()
     }
@@ -54,6 +54,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quotes.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for: indexPath) as! QuotesTableViewCell
         let quoteAtIndexPath = quotes[indexPath.row]
@@ -89,40 +90,35 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK : TableView Delegate
     
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
-    }
-    
-//  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//            // IF you want this animation uncomment these lines.
-//    let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0)
-//            cell.layer.transform = rotationTransform
-//            //Define the final state (After the animation)
-//            UIView.animate(withDuration: 0.9, animations: { cell.layer.transform = CATransform3DIdentity })
-//        }
+        return 250
+   }
     
     //MARK : Methods
     
     func fetchQuotes() {
-        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         QuotesAPIService.getQuotes { quotes in
-            guard let quotes = quotes else {return}
-            DispatchQueue.main.async {
-                quotes.forEach { $0.isFavorite = self.existsInCoreData(quote: $0) }
-                self.quotes = quotes
-                self.tableView.reloadData()
-                QuotesAPIService.getProgrammingQuote { pQuotes in
-                    guard let pQuotes = pQuotes else {return}
-                    DispatchQueue.main.async {
-                        pQuotes.forEach { $0.isFavorite = self.existsInCoreData(quote: $0) }
-                        self.quotes.append(contentsOf: pQuotes)
-                        self.tableView.reloadData()
-                    }
-                }
-                
-            }
+        guard let quotes = quotes else {return}
+        quotes.forEach { $0.isFavorite = self.existsInCoreData(quote: $0) }
+        self.quotes = quotes
+        dispatchGroup.leave()
         }
+        dispatchGroup.enter()
+        QuotesAPIService.getProgrammingQuote(completion: { (pQuote) in
+            guard let pQuote = pQuote else {return}
+            pQuote.forEach { $0.isFavorite = self.existsInCoreData(quote: $0) }
+          self.quotes.append(contentsOf: pQuote)
+            dispatchGroup.leave()
+            })
+        
+        dispatchGroup.notify(queue: .main) {
+            print("this function is getting call ")
+            self.tableView.reloadData()
+            
     }
-    
+}
+
     func existsInCoreData(quote: Quote) -> Bool {
         let favorites = self.fetchedResultsController.fetchedObjects ?? []
         return favorites.contains(where: { $0.text == quote.quote })
@@ -130,7 +126,6 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 }
 
 extension QuotesViewController: FavoriteButtonClickDelegate {
-    
     func didSet(cell: QuotesTableViewCell, isFavorite: Bool) {
         guard let path = tableView.indexPath(for: cell)?.row else { return }
         let quote = quotes[path]
