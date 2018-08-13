@@ -16,14 +16,13 @@ class SubClassTabBarViewController: UITabBarController {
     }
 
     @IBOutlet weak var homeButtonTapped: UITabBar!
-    
 }
 
 extension SubClassTabBarViewController: UITabBarControllerDelegate  {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         guard let fromView = selectedViewController?.view, let toView = viewController.view else {
-            return false // Make sure you want this as false
+            return false 
         }
         
         if fromView != toView {

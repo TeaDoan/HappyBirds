@@ -9,6 +9,11 @@
 import CoreData
 import UIKit
 
+extension Notification.Name {
+    static let favoriteHasDeleted = Notification.Name("FavoriteHasDeleted")
+}
+
+
 class FavoriteTableViewController: UITableViewController {
     
     lazy var fetchedResultsController: NSFetchedResultsController<Favorite> = {
@@ -25,11 +30,14 @@ class FavoriteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0, green: 0.8651906848, blue: 0.6215168834, alpha: 1)]
+        let textAttributes = [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         try? fetchedResultsController.performFetch()
+       
     }
     
+    //MARK: - Methods
+
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,32 +47,21 @@ class FavoriteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favorite", for: indexPath) as! FavoriteTableViewCell
         let favorite = fetchedResultsController.object(at: indexPath)
-         let whiteRoundedView : UIView = UIView(frame: CGRect(x: 20, y: 18, width: self.view.frame.size.width - 40, height: 170))
-        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
-        tableView.separatorStyle = .none
-        whiteRoundedView.layer.masksToBounds = false
-        whiteRoundedView.layer.cornerRadius = 8.0
-        whiteRoundedView.layer.masksToBounds = true
-        whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
-        whiteRoundedView.layer.shadowOpacity = 0.2
-        whiteRoundedView.applyGradient(colours:[UIColor.rgb(71, 207, 171),UIColor.rgb(56, 207, 150)] )
-        cell.contentView.addSubview(whiteRoundedView)
-        cell.contentView.sendSubview(toBack: whiteRoundedView)
         cell.bodyTextLabel.text = favorite.text
+        cell.detailLabel.text = favorite.author ?? "Unknown"
+        DispatchQueue.main.async {
+             cell.formatContainerViewIfNeeded()
+        }
         return cell
     }
     
-    
-    // MARK - TableView Delegate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
-    }
-   
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let contentToDeleleAtIndexPath = fetchedResultsController.fetchedObjects?[indexPath.row] {
+        NotificationCenter.default.post(name: .favoriteHasDeleted, object: nil, userInfo: [
+                    "text": contentToDeleleAtIndexPath.text!
+                    ])
                 CoreDataStack.shared.delete(object: contentToDeleleAtIndexPath)
             }
         }    
@@ -84,6 +81,7 @@ class FavoriteTableViewController: UITableViewController {
 
 extension FavoriteTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        NotificationCenter.default.post(name: .favoriteHasDeleted, object: nil)
         tableView.reloadData()
     }
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {

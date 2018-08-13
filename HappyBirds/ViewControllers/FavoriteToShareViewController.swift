@@ -14,6 +14,7 @@ enum ImageState {
     case random(UIImage)
 }
 
+
 class FavoriteToShareViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var state: ImageState = .none {
@@ -29,6 +30,7 @@ class FavoriteToShareViewController: UIViewController, UIImagePickerControllerDe
         super.viewDidLoad()
         if isViewLoaded {
             updateViews()
+            
         }
     }
     
@@ -82,8 +84,6 @@ class FavoriteToShareViewController: UIViewController, UIImagePickerControllerDe
         } else {
             userActivityController = UIActivityViewController(activityItems: [ textToImage(drawText: contentLabel.text!, inImage: shareImageView.asImage(), atPoint: CGPoint(x: 0, y: Int(shareImageView.frame.height - contentLabel.frame.height)*2))], applicationActivities: nil)
         }
-       
-       
         present(userActivityController, animated: true, completion: nil)
         
 }
@@ -91,7 +91,7 @@ class FavoriteToShareViewController: UIViewController, UIImagePickerControllerDe
     func updateViews() {
         guard let favoriteToShare = favoriteToShare else {return}
         contentLabel.text = favoriteToShare.text
-        contentLabel.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        contentLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
     }
     
     func updateShareImageView() {
