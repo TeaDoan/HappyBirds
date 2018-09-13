@@ -251,7 +251,7 @@
                                     <outlet property="delegate" destination="LOy-AA-WJE" id="LvG-IM-v1T"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter topics " backgroundImage="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="ntp-hw-tdC">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search topics " backgroundImage="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="ntp-hw-tdC">
                                 <rect key="frame" x="0.0" y="64" width="414" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.0" green="0.85098039219999999" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>

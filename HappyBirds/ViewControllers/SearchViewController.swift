@@ -44,19 +44,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as? SearchTableViewCell else {return UITableViewCell()}
         let result = jokeResults[indexPath.row]
+        tableView.separatorStyle = .none
         cell.bodyLabel.text = result.joke ?? "No results found"
         cell.detailsLabel.text = "Unknown"
         DispatchQueue.main.async {
         cell.formatContainerViewIfNeeded()
         }
-        tableView.separatorStyle = .none
         return cell
     }
     
     // MARK - TableView Delegate
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 250
-//    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         searchBar.resignFirstResponder()
